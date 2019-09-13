@@ -34,4 +34,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'com.google.code.gson:gson:2.6.1'
     implementation 'com.ms-square:expandableTextView:0.1.4'
+    implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
 }

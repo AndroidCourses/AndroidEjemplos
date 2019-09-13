@@ -10,43 +10,61 @@ import android.widget.TextView;
 
 import com.iwebsapp.ejemploandroid.R;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
+
 public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
 
-    Context context;
+    private Context context;
+    private List<String> listaDataHeader;
+    private List<String> listText;
+    //private HashMap<String, List<String>> listHashMap;
 
-    String[] faqs = {
+    /*String[] faqs = {
             "Question number 1",
             "Question number 2",
             "Question number 3"
     };
-
     String[][] answer = {{"Answer to question number 1"},
             {"Answer to question number 2"},
             {"Answer to question number 3"}
-    };
+    };*/
 
-    public ExpandableListViewAdapter(Context context) {
+    public ExpandableListViewAdapter(Context context, List<String> listaDataHeader, List<String> listText) {
         this.context = context;
+        this.listaDataHeader = listaDataHeader;
+        this.listText = listText;
     }
+
+   /* ExpandableListViewAdapter(Context context) {
+        this.context = context;
+    }*/
 
     @Override
     public int getGroupCount() {
-        return faqs.length;
+        //return faqs.length;
+        return  listaDataHeader.size();
     }
 
     @Override
     public int getChildrenCount(int i) {
-        return answer[i].length;
+        //return answer[i].length;
+        //return Objects.requireNonNull(listHashMap.get(listaDataHeader.get(i))).size();
+        return listText.get(i).length();
     }
 
     @Override
     public Object getGroup(int i) {
-        return faqs[i];
+        //return faqs[i];
+        return listaDataHeader.get(i);
     }
 
     @Override
     public Object getChild(int i, int i1) {
-        return answer[i][i1];
+        //return answer[i][i1];
+        //return listHashMap.get(listaDataHeader.get(i)).get(i1);
+        return listText.get(i).length();
     }
 
     @Override
@@ -91,6 +109,6 @@ public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int i, int i1) {
-        return false;
+        return true;
     }
 }
