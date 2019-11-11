@@ -23,4 +23,14 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         app:srcCompat="@drawable/ic_menu_gallery" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_rounder"/>
+
 </LinearLayout>
